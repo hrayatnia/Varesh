@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		585BCC6D2933958700C70007 /* NetShears in Frameworks */ = {isa = PBXBuildFile; productRef = 585BCC6C2933958700C70007 /* NetShears */; };
+		585BCC7829339A6400C70007 /* Convertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7729339A6400C70007 /* Convertable.swift */; };
+		585BCC7D2933DE0B00C70007 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7C2933DE0B00C70007 /* Interactor.swift */; };
+		585BCC7F2933DE1500C70007 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7E2933DE1500C70007 /* ViewModel.swift */; };
+		585BCC812933DE2100C70007 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC802933DE2100C70007 /* ViewProtocol.swift */; };
+		585BCC862933E34A00C70007 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC852933E34A00C70007 /* ContentViewModel.swift */; };
+		585BCC8A2933E4CF00C70007 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = 585BCC892933E4CF00C70007 /* Stinsen */; };
+		585BCC8E2933E8A400C70007 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC8D2933E8A400C70007 /* AppCoordinator.swift */; };
 		5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CBF32930EBE6001785BE /* VareshApp.swift */; };
 		5866CBF62930EBE6001785BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CBF52930EBE6001785BE /* ContentView.swift */; };
 		5866CBF82930EBE8001785BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5866CBF72930EBE8001785BE /* Assets.xcassets */; };
@@ -14,6 +22,8 @@
 		5866CC052930EBE8001785BE /* VareshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CC042930EBE8001785BE /* VareshTests.swift */; };
 		5866CC0F2930EBE8001785BE /* VareshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CC0E2930EBE8001785BE /* VareshUITests.swift */; };
 		5866CC112930EBE8001785BE /* VareshUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CC102930EBE8001785BE /* VareshUITestsLaunchTests.swift */; };
+		5886004C29338B2300354AD8 /* KWeatherService in Frameworks */ = {isa = PBXBuildFile; productRef = 5886004B29338B2300354AD8 /* KWeatherService */; };
+		5886004F29338B5200354AD8 /* KCTestUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 5886004E29338B5200354AD8 /* KCTestUtil */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		585BCC6E293395AA00C70007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		585BCC7729339A6400C70007 /* Convertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertable.swift; sourceTree = "<group>"; };
+		585BCC7C2933DE0B00C70007 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		585BCC7E2933DE1500C70007 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		585BCC802933DE2100C70007 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
+		585BCC852933E34A00C70007 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		585BCC8D2933E8A400C70007 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5866CBF02930EBE6001785BE /* Varesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Varesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5866CBF32930EBE6001785BE /* VareshApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VareshApp.swift; sourceTree = "<group>"; };
 		5866CBF52930EBE6001785BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BCC8A2933E4CF00C70007 /* Stinsen in Frameworks */,
+				585BCC6D2933958700C70007 /* NetShears in Frameworks */,
+				5886004C29338B2300354AD8 /* KWeatherService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5886004F29338B5200354AD8 /* KCTestUtil in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +92,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		585BCC702933966900C70007 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC752933990C00C70007 /* Entity Convertor */,
+				585BCC73293398E500C70007 /* Interactor */,
+				585BCC722933967C00C70007 /* MVVM */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		585BCC722933967C00C70007 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC7E2933DE1500C70007 /* ViewModel.swift */,
+				585BCC802933DE2100C70007 /* ViewProtocol.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		585BCC73293398E500C70007 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC7C2933DE0B00C70007 /* Interactor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		585BCC752933990C00C70007 /* Entity Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC7729339A6400C70007 /* Convertable.swift */,
+			);
+			path = "Entity Convertor";
+			sourceTree = "<group>";
+		};
+		585BCC762933992600C70007 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC842933E33800C70007 /* Content View */,
+				5866CBF32930EBE6001785BE /* VareshApp.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		585BCC842933E33800C70007 /* Content View */ = {
+			isa = PBXGroup;
+			children = (
+				5866CBF52930EBE6001785BE /* ContentView.swift */,
+				585BCC852933E34A00C70007 /* ContentViewModel.swift */,
+			);
+			path = "Content View";
+			sourceTree = "<group>";
+		};
+		585BCC8B2933E82F00C70007 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC8C2933E89600C70007 /* AppCoordinator */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		585BCC8C2933E89600C70007 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC8D2933E8A400C70007 /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
 		5866CBE72930EBE6001785BE = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +184,11 @@
 		5866CBF22930EBE6001785BE /* Varesh */ = {
 			isa = PBXGroup;
 			children = (
-				5866CBF32930EBE6001785BE /* VareshApp.swift */,
-				5866CBF52930EBE6001785BE /* ContentView.swift */,
-				5866CBF72930EBE8001785BE /* Assets.xcassets */,
-				5866CBF92930EBE8001785BE /* Preview Content */,
+				585BCC702933966900C70007 /* General */,
+				585BCC6E293395AA00C70007 /* Info.plist */,
+				58860047293389A200354AD8 /* Entity Layer */,
+				588600462933899500354AD8 /* UseCase Layer */,
+				588600452933898E00354AD8 /* Presentation */,
 			);
 			path = Varesh;
 			sourceTree = "<group>";
@@ -127,6 +218,39 @@
 			path = VareshUITests;
 			sourceTree = "<group>";
 		};
+		588600452933898E00354AD8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC8B2933E82F00C70007 /* Coordinator */,
+				585BCC762933992600C70007 /* Root */,
+				5866CBF92930EBE8001785BE /* Preview Content */,
+				58860048293389B100354AD8 /* Resources */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		588600462933899500354AD8 /* UseCase Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UseCase Layer";
+			sourceTree = "<group>";
+		};
+		58860047293389A200354AD8 /* Entity Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Entity Layer";
+			sourceTree = "<group>";
+		};
+		58860048293389B100354AD8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5866CBF72930EBE8001785BE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +261,18 @@
 				5866CBEC2930EBE6001785BE /* Sources */,
 				5866CBED2930EBE6001785BE /* Frameworks */,
 				5866CBEE2930EBE6001785BE /* Resources */,
+				585BCC7929339F1D00C70007 /* Swift Lint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Varesh;
+			packageProductDependencies = (
+				5886004B29338B2300354AD8 /* KWeatherService */,
+				585BCC6C2933958700C70007 /* NetShears */,
+				585BCC892933E4CF00C70007 /* Stinsen */,
+			);
 			productName = Varesh;
 			productReference = 5866CBF02930EBE6001785BE /* Varesh.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +291,9 @@
 				5866CC022930EBE8001785BE /* PBXTargetDependency */,
 			);
 			name = VareshTests;
+			packageProductDependencies = (
+				5886004E29338B5200354AD8 /* KCTestUtil */,
+			);
 			productName = VareshTests;
 			productReference = 5866CC002930EBE8001785BE /* VareshTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -215,6 +348,12 @@
 				Base,
 			);
 			mainGroup = 5866CBE72930EBE6001785BE;
+			packageReferences = (
+				5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */,
+				5886004D29338B5200354AD8 /* XCRemoteSwiftPackageReference "KCTestUtil" */,
+				585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */,
+				585BCC882933E4CF00C70007 /* XCRemoteSwiftPackageReference "stinsen" */,
+			);
 			productRefGroup = 5866CBF12930EBE6001785BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,12 +391,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		585BCC7929339F1D00C70007 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5866CBEC2930EBE6001785BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BCC862933E34A00C70007 /* ContentViewModel.swift in Sources */,
+				585BCC7829339A6400C70007 /* Convertable.swift in Sources */,
+				585BCC7D2933DE0B00C70007 /* Interactor.swift in Sources */,
 				5866CBF62930EBE6001785BE /* ContentView.swift in Sources */,
+				585BCC8E2933E8A400C70007 /* AppCoordinator.swift in Sources */,
+				585BCC812933DE2100C70007 /* ViewProtocol.swift in Sources */,
+				585BCC7F2933DE1500C70007 /* ViewModel.swift in Sources */,
 				5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,10 +582,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Presentation/Preview Content\"";
 				DEVELOPMENT_TEAM = 49RBVVJDVP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Varesh/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to fetch your current location to update weather info.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,10 +614,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Presentation/Preview Content\"";
 				DEVELOPMENT_TEAM = 49RBVVJDVP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Varesh/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to fetch your current location to update weather info.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -585,6 +755,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/divar-ir/NetShears.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		585BCC882933E4CF00C70007 /* XCRemoteSwiftPackageReference "stinsen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rundfunk47/stinsen.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hrayatnia/KWeatherService";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		5886004D29338B5200354AD8 /* XCRemoteSwiftPackageReference "KCTestUtil" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hrayatnia/KCTestUtil";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		585BCC6C2933958700C70007 /* NetShears */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */;
+			productName = NetShears;
+		};
+		585BCC892933E4CF00C70007 /* Stinsen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 585BCC882933E4CF00C70007 /* XCRemoteSwiftPackageReference "stinsen" */;
+			productName = Stinsen;
+		};
+		5886004B29338B2300354AD8 /* KWeatherService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */;
+			productName = KWeatherService;
+		};
+		5886004E29338B5200354AD8 /* KCTestUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5886004D29338B5200354AD8 /* XCRemoteSwiftPackageReference "KCTestUtil" */;
+			productName = KCTestUtil;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5866CBE82930EBE6001785BE /* Project object */;
 }

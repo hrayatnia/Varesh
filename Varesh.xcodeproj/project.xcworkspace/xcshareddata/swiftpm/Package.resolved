@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "kcnetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hrayatnia/KCNetwork",
+      "state" : {
+        "revision" : "5b4e6688d27cdc36abdd7e3dd2a77a98b66704a6",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "kctestutil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hrayatnia/KCTestUtil",
+      "state" : {
+        "revision" : "1714bb6a3d01e9a8af2d3ad71d586e37234ed1be",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "kweatherservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hrayatnia/KWeatherService",
+      "state" : {
+        "revision" : "5d621661465537aa6e22b70e60e61aa5281465a7",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "netshears",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/divar-ir/NetShears.git",
+      "state" : {
+        "revision" : "e850e9fbf27ecae50f3d741ba6e3729759a45c80",
+        "version" : "3.4.1"
+      }
+    },
+    {
+      "identity" : "stinsen",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rundfunk47/stinsen.git",
+      "state" : {
+        "revision" : "91ddedb7d86c7d3aa2d0dd281f1113ebae256324",
+        "version" : "2.0.13"
+      }
+    }
+  ],
+  "version" : 2
+}
