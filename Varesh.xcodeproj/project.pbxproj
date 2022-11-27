@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		585BCC6D2933958700C70007 /* NetShears in Frameworks */ = {isa = PBXBuildFile; productRef = 585BCC6C2933958700C70007 /* NetShears */; };
 		585BCC7829339A6400C70007 /* Convertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7729339A6400C70007 /* Convertable.swift */; };
+		585BCC7D2933DE0B00C70007 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7C2933DE0B00C70007 /* Interactor.swift */; };
+		585BCC7F2933DE1500C70007 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7E2933DE1500C70007 /* ViewModel.swift */; };
+		585BCC812933DE2100C70007 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC802933DE2100C70007 /* ViewProtocol.swift */; };
+		585BCC862933E34A00C70007 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC852933E34A00C70007 /* ContentViewModel.swift */; };
+		585BCC8A2933E4CF00C70007 /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = 585BCC892933E4CF00C70007 /* Stinsen */; };
+		585BCC8E2933E8A400C70007 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC8D2933E8A400C70007 /* AppCoordinator.swift */; };
 		5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CBF32930EBE6001785BE /* VareshApp.swift */; };
 		5866CBF62930EBE6001785BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CBF52930EBE6001785BE /* ContentView.swift */; };
 		5866CBF82930EBE8001785BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5866CBF72930EBE8001785BE /* Assets.xcassets */; };
@@ -40,6 +46,11 @@
 /* Begin PBXFileReference section */
 		585BCC6E293395AA00C70007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		585BCC7729339A6400C70007 /* Convertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertable.swift; sourceTree = "<group>"; };
+		585BCC7C2933DE0B00C70007 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		585BCC7E2933DE1500C70007 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		585BCC802933DE2100C70007 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
+		585BCC852933E34A00C70007 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		585BCC8D2933E8A400C70007 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5866CBF02930EBE6001785BE /* Varesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Varesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5866CBF32930EBE6001785BE /* VareshApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VareshApp.swift; sourceTree = "<group>"; };
 		5866CBF52930EBE6001785BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BCC8A2933E4CF00C70007 /* Stinsen in Frameworks */,
 				585BCC6D2933958700C70007 /* NetShears in Frameworks */,
 				5886004C29338B2300354AD8 /* KWeatherService in Frameworks */,
 			);
@@ -84,24 +96,17 @@
 			isa = PBXGroup;
 			children = (
 				585BCC752933990C00C70007 /* Entity Convertor */,
-				585BCC74293398F200C70007 /* Router */,
 				585BCC73293398E500C70007 /* Interactor */,
 				585BCC722933967C00C70007 /* MVVM */,
-				585BCC712933967000C70007 /* Coordinator */,
 			);
 			path = General;
-			sourceTree = "<group>";
-		};
-		585BCC712933967000C70007 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		585BCC722933967C00C70007 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				585BCC7E2933DE1500C70007 /* ViewModel.swift */,
+				585BCC802933DE2100C70007 /* ViewProtocol.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -109,15 +114,9 @@
 		585BCC73293398E500C70007 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				585BCC7C2933DE0B00C70007 /* Interactor.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		585BCC74293398F200C70007 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		585BCC752933990C00C70007 /* Entity Convertor */ = {
@@ -131,10 +130,35 @@
 		585BCC762933992600C70007 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				5866CBF52930EBE6001785BE /* ContentView.swift */,
+				585BCC842933E33800C70007 /* Content View */,
 				5866CBF32930EBE6001785BE /* VareshApp.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		585BCC842933E33800C70007 /* Content View */ = {
+			isa = PBXGroup;
+			children = (
+				5866CBF52930EBE6001785BE /* ContentView.swift */,
+				585BCC852933E34A00C70007 /* ContentViewModel.swift */,
+			);
+			path = "Content View";
+			sourceTree = "<group>";
+		};
+		585BCC8B2933E82F00C70007 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC8C2933E89600C70007 /* AppCoordinator */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		585BCC8C2933E89600C70007 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC8D2933E8A400C70007 /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
 		5866CBE72930EBE6001785BE = {
@@ -197,6 +221,7 @@
 		588600452933898E00354AD8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				585BCC8B2933E82F00C70007 /* Coordinator */,
 				585BCC762933992600C70007 /* Root */,
 				5866CBF92930EBE8001785BE /* Preview Content */,
 				58860048293389B100354AD8 /* Resources */,
@@ -246,6 +271,7 @@
 			packageProductDependencies = (
 				5886004B29338B2300354AD8 /* KWeatherService */,
 				585BCC6C2933958700C70007 /* NetShears */,
+				585BCC892933E4CF00C70007 /* Stinsen */,
 			);
 			productName = Varesh;
 			productReference = 5866CBF02930EBE6001785BE /* Varesh.app */;
@@ -326,6 +352,7 @@
 				5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */,
 				5886004D29338B5200354AD8 /* XCRemoteSwiftPackageReference "KCTestUtil" */,
 				585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */,
+				585BCC882933E4CF00C70007 /* XCRemoteSwiftPackageReference "stinsen" */,
 			);
 			productRefGroup = 5866CBF12930EBE6001785BE /* Products */;
 			projectDirPath = "";
@@ -390,8 +417,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BCC862933E34A00C70007 /* ContentViewModel.swift in Sources */,
 				585BCC7829339A6400C70007 /* Convertable.swift in Sources */,
+				585BCC7D2933DE0B00C70007 /* Interactor.swift in Sources */,
 				5866CBF62930EBE6001785BE /* ContentView.swift in Sources */,
+				585BCC8E2933E8A400C70007 /* AppCoordinator.swift in Sources */,
+				585BCC812933DE2100C70007 /* ViewProtocol.swift in Sources */,
+				585BCC7F2933DE1500C70007 /* ViewModel.swift in Sources */,
 				5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +765,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		585BCC882933E4CF00C70007 /* XCRemoteSwiftPackageReference "stinsen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rundfunk47/stinsen.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hrayatnia/KWeatherService";
@@ -756,6 +796,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */;
 			productName = NetShears;
+		};
+		585BCC892933E4CF00C70007 /* Stinsen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 585BCC882933E4CF00C70007 /* XCRemoteSwiftPackageReference "stinsen" */;
+			productName = Stinsen;
 		};
 		5886004B29338B2300354AD8 /* KWeatherService */ = {
 			isa = XCSwiftPackageProductDependency;
