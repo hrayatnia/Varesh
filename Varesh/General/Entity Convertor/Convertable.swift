@@ -8,9 +8,14 @@
 import Foundation
 
 protocol Convertable {
+
+    //
     associatedtype Entity
+
+    //
     func convert() -> Entity
-    
+
+    //
     @discardableResult
     static func convert(_ model: Entity) -> Self
 }
