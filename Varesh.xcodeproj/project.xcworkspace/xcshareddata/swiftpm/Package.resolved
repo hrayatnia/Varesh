@@ -23,8 +23,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hrayatnia/KWeatherService",
       "state" : {
-        "revision" : "e51a29968cffd1ada7df46dd03ec6a07ed8f02a2",
-        "version" : "1.0.0"
+        "revision" : "5d621661465537aa6e22b70e60e61aa5281465a7",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "netshears",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/divar-ir/NetShears.git",
+      "state" : {
+        "revision" : "e850e9fbf27ecae50f3d741ba6e3729759a45c80",
+        "version" : "3.4.1"
       }
     }
   ],

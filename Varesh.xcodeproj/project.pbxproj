@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		585BCC6D2933958700C70007 /* NetShears in Frameworks */ = {isa = PBXBuildFile; productRef = 585BCC6C2933958700C70007 /* NetShears */; };
+		585BCC7829339A6400C70007 /* Convertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7729339A6400C70007 /* Convertable.swift */; };
 		5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CBF32930EBE6001785BE /* VareshApp.swift */; };
 		5866CBF62930EBE6001785BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866CBF52930EBE6001785BE /* ContentView.swift */; };
 		5866CBF82930EBE8001785BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5866CBF72930EBE8001785BE /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		585BCC6E293395AA00C70007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		585BCC7729339A6400C70007 /* Convertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertable.swift; sourceTree = "<group>"; };
 		5866CBF02930EBE6001785BE /* Varesh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Varesh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5866CBF32930EBE6001785BE /* VareshApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VareshApp.swift; sourceTree = "<group>"; };
 		5866CBF52930EBE6001785BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BCC6D2933958700C70007 /* NetShears in Frameworks */,
 				5886004C29338B2300354AD8 /* KWeatherService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +80,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		585BCC702933966900C70007 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC752933990C00C70007 /* Entity Convertor */,
+				585BCC74293398F200C70007 /* Router */,
+				585BCC73293398E500C70007 /* Interactor */,
+				585BCC722933967C00C70007 /* MVVM */,
+				585BCC712933967000C70007 /* Coordinator */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		585BCC712933967000C70007 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		585BCC722933967C00C70007 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		585BCC73293398E500C70007 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		585BCC74293398F200C70007 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		585BCC752933990C00C70007 /* Entity Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				585BCC7729339A6400C70007 /* Convertable.swift */,
+			);
+			path = "Entity Convertor";
+			sourceTree = "<group>";
+		};
+		585BCC762933992600C70007 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				5866CBF52930EBE6001785BE /* ContentView.swift */,
+				5866CBF32930EBE6001785BE /* VareshApp.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		5866CBE72930EBE6001785BE = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +160,10 @@
 		5866CBF22930EBE6001785BE /* Varesh */ = {
 			isa = PBXGroup;
 			children = (
-				58860047293389A200354AD8 /* Domain */,
-				588600462933899500354AD8 /* Business */,
+				585BCC702933966900C70007 /* General */,
+				585BCC6E293395AA00C70007 /* Info.plist */,
+				58860047293389A200354AD8 /* Entity Layer */,
+				588600462933899500354AD8 /* UseCase Layer */,
 				588600452933898E00354AD8 /* Presentation */,
 			);
 			path = Varesh;
@@ -133,26 +197,25 @@
 		588600452933898E00354AD8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				585BCC762933992600C70007 /* Root */,
 				5866CBF92930EBE8001785BE /* Preview Content */,
-				5866CBF32930EBE6001785BE /* VareshApp.swift */,
-				5866CBF52930EBE6001785BE /* ContentView.swift */,
 				58860048293389B100354AD8 /* Resources */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		588600462933899500354AD8 /* Business */ = {
+		588600462933899500354AD8 /* UseCase Layer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Business;
+			path = "UseCase Layer";
 			sourceTree = "<group>";
 		};
-		58860047293389A200354AD8 /* Domain */ = {
+		58860047293389A200354AD8 /* Entity Layer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Domain;
+			path = "Entity Layer";
 			sourceTree = "<group>";
 		};
 		58860048293389B100354AD8 /* Resources */ = {
@@ -181,6 +244,7 @@
 			name = Varesh;
 			packageProductDependencies = (
 				5886004B29338B2300354AD8 /* KWeatherService */,
+				585BCC6C2933958700C70007 /* NetShears */,
 			);
 			productName = Varesh;
 			productReference = 5866CBF02930EBE6001785BE /* Varesh.app */;
@@ -260,6 +324,7 @@
 			packageReferences = (
 				5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */,
 				5886004D29338B5200354AD8 /* XCRemoteSwiftPackageReference "KCTestUtil" */,
+				585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */,
 			);
 			productRefGroup = 5866CBF12930EBE6001785BE /* Products */;
 			projectDirPath = "";
@@ -303,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BCC7829339A6400C70007 /* Convertable.swift in Sources */,
 				5866CBF62930EBE6001785BE /* ContentView.swift in Sources */,
 				5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */,
 			);
@@ -462,10 +528,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Presentation/Preview Content\"";
 				DEVELOPMENT_TEAM = 49RBVVJDVP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Varesh/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to fetch your current location to update weather info.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,10 +560,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Varesh/Presentation/Preview Content\"";
 				DEVELOPMENT_TEAM = 49RBVVJDVP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Varesh/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to fetch your current location to update weather info.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -633,12 +703,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/divar-ir/NetShears.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hrayatnia/KWeatherService";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
 			};
 		};
 		5886004D29338B5200354AD8 /* XCRemoteSwiftPackageReference "KCTestUtil" */ = {
@@ -652,6 +730,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		585BCC6C2933958700C70007 /* NetShears */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 585BCC6B2933958700C70007 /* XCRemoteSwiftPackageReference "NetShears" */;
+			productName = NetShears;
+		};
 		5886004B29338B2300354AD8 /* KWeatherService */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5886004A29338B2300354AD8 /* XCRemoteSwiftPackageReference "KWeatherService" */;
