@@ -14,8 +14,8 @@ struct HomeView: ViewProtocol {
         }.padding()
             .navigationTitle("Weather".capitalized)
             .navigationBarSearch(viewModel.$searchQuery)
-            .toolbar{
-                Button { } label: { Image(systemName: "gear")}
+            .toolbar {
+                Button(action: viewModel.showSetting, label: { Image(systemName: "gear") })
             }
 
     }

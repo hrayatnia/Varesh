@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5805FF9E29354C2B00E85A01 /* SettingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805FF9D29354C2B00E85A01 /* SettingUseCase.swift */; };
+		5805FFA129354C4F00E85A01 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805FFA029354C4F00E85A01 /* Theme.swift */; };
+		5805FFA429354C7E00E85A01 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805FFA329354C7E00E85A01 /* AppSetting.swift */; };
+		5805FFA629354C9900E85A01 /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805FFA529354C9900E85A01 /* BundleInfo.swift */; };
 		585BCC6D2933958700C70007 /* NetShears in Frameworks */ = {isa = PBXBuildFile; productRef = 585BCC6C2933958700C70007 /* NetShears */; };
 		585BCC7829339A6400C70007 /* Convertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7729339A6400C70007 /* Convertable.swift */; };
 		585BCC7D2933DE0B00C70007 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BCC7C2933DE0B00C70007 /* Interactor.swift */; };
@@ -28,6 +32,8 @@
 		588A733429350ACA00707BDD /* CityWeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A733329350AC900707BDD /* CityWeatherRow.swift */; };
 		588A7336293536EF00707BDD /* CityWeatherRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A7335293536EF00707BDD /* CityWeatherRowViewModel.swift */; };
 		588A733A2935424B00707BDD /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A73392935424B00707BDD /* SearchBar.swift */; };
+		588A733D29354B0900707BDD /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A733C29354B0900707BDD /* SettingView.swift */; };
+		588A733F29354B1B00707BDD /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A733E29354B1B00707BDD /* SettingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5805FF9D29354C2B00E85A01 /* SettingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUseCase.swift; sourceTree = "<group>"; };
+		5805FFA029354C4F00E85A01 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5805FFA329354C7E00E85A01 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
+		5805FFA529354C9900E85A01 /* BundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleInfo.swift; sourceTree = "<group>"; };
 		585BCC6E293395AA00C70007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		585BCC7729339A6400C70007 /* Convertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertable.swift; sourceTree = "<group>"; };
 		585BCC7C2933DE0B00C70007 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -68,6 +78,8 @@
 		588A733329350AC900707BDD /* CityWeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherRow.swift; sourceTree = "<group>"; };
 		588A7335293536EF00707BDD /* CityWeatherRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherRowViewModel.swift; sourceTree = "<group>"; };
 		588A73392935424B00707BDD /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		588A733C29354B0900707BDD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		588A733E29354B1B00707BDD /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +112,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5805FF9C29354C0A00E85A01 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				5805FF9D29354C2B00E85A01 /* SettingUseCase.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		5805FF9F29354C4200E85A01 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5805FFA029354C4F00E85A01 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		5805FFA229354C6800E85A01 /* AppSetting */ = {
+			isa = PBXGroup;
+			children = (
+				5805FFA329354C7E00E85A01 /* AppSetting.swift */,
+				5805FFA529354C9900E85A01 /* BundleInfo.swift */,
+			);
+			path = AppSetting;
+			sourceTree = "<group>";
+		};
 		585BCC702933966900C70007 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				5805FFA229354C6800E85A01 /* AppSetting */,
+				5805FF9F29354C4200E85A01 /* Theme */,
 				585BCC752933990C00C70007 /* Entity Convertor */,
 				585BCC73293398E500C70007 /* Interactor */,
 				585BCC722933967C00C70007 /* MVVM */,
@@ -219,6 +258,7 @@
 		587EEAE42934319E00064FAA /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				588A733B2935450300707BDD /* Setting */,
 				588A73372935423000707BDD /* Search */,
 				587EEAE5293431A500064FAA /* Home */,
 			);
@@ -250,6 +290,7 @@
 		588600462933899500354AD8 /* UseCase Layer */ = {
 			isa = PBXGroup;
 			children = (
+				5805FF9C29354C0A00E85A01 /* Setting */,
 			);
 			path = "UseCase Layer";
 			sourceTree = "<group>";
@@ -292,6 +333,15 @@
 				588A73392935424B00707BDD /* SearchBar.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		588A733B2935450300707BDD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				588A733C29354B0900707BDD /* SettingView.swift */,
+				588A733E29354B1B00707BDD /* SettingViewModel.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,16 +512,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5805FFA629354C9900E85A01 /* BundleInfo.swift in Sources */,
 				587EEAE7293431B200064FAA /* HomeView.swift in Sources */,
 				585BCC7829339A6400C70007 /* Convertable.swift in Sources */,
 				587EEAE9293431BD00064FAA /* HomeViewModel.swift in Sources */,
+				588A733F29354B1B00707BDD /* SettingViewModel.swift in Sources */,
 				585BCC7D2933DE0B00C70007 /* Interactor.swift in Sources */,
 				588A7336293536EF00707BDD /* CityWeatherRowViewModel.swift in Sources */,
 				588A733429350ACA00707BDD /* CityWeatherRow.swift in Sources */,
 				585BCC8E2933E8A400C70007 /* AppCoordinator.swift in Sources */,
 				585BCC812933DE2100C70007 /* ViewProtocol.swift in Sources */,
 				585BCC7F2933DE1500C70007 /* ViewModel.swift in Sources */,
+				5805FFA429354C7E00E85A01 /* AppSetting.swift in Sources */,
+				588A733D29354B0900707BDD /* SettingView.swift in Sources */,
 				588A733A2935424B00707BDD /* SearchBar.swift in Sources */,
+				5805FFA129354C4F00E85A01 /* Theme.swift in Sources */,
+				5805FF9E29354C2B00E85A01 /* SettingUseCase.swift in Sources */,
 				5866CBF42930EBE6001785BE /* VareshApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

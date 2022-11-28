@@ -7,7 +7,13 @@ final class AppCoordinator: NavigationCoordinatable {
 
     @Root var start = makeStart
 
+    @Route(.push) var setting = routeToSetting
+
     func makeStart() -> some View {
         HomeView(viewModel: HomeViewModel())
+    }
+
+    func routeToSetting() -> some View {
+        SettingView(viewModel: .init())
     }
 }
