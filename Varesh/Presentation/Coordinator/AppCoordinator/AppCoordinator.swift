@@ -8,6 +8,6 @@ final class AppCoordinator: NavigationCoordinatable {
     @Root var start = makeStart
 
     func makeStart() -> some View {
-        ContentView(viewModel: ContentViewModel())
+        HomeView(viewModel: HomeViewModel())
     }
 }

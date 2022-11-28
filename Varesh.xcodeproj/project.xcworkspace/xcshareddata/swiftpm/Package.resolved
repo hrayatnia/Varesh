@@ -19,12 +19,21 @@
       }
     },
     {
+      "identity" : "kdesignsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hrayatnia/KDesignSystem",
+      "state" : {
+        "revision" : "59154eb07c7ed0df62c1bf221374584536060db9",
+        "version" : "0.0.3"
+      }
+    },
+    {
       "identity" : "kweatherservice",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hrayatnia/KWeatherService",
       "state" : {
-        "revision" : "5d621661465537aa6e22b70e60e61aa5281465a7",
-        "version" : "1.0.1"
+        "revision" : "8f67ae50e168f952c8a5714161a82b9ce610a011",
+        "version" : "1.0.2"
       }
     },
     {
