@@ -46,8 +46,7 @@ struct CityWeatherRow_Previews: PreviewProvider {
         NavigationView {
             LazyListView {
                 ForEach(0..<10) { _ in
-                    CityWeatherRow(viewModel: .init(city: .mock(),
-                                                    weather: .mock()))
+                    CityWeatherRow(viewModel: .init(city: .mock()))
                 }
             }.padding()
                 .navigationTitle("Weather".capitalized)

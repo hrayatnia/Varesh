@@ -3,19 +3,23 @@ import SwiftUI
 import KWeatherService
 import Combine
 
-struct CityInfo {
+struct CityInfo: Identifiable {
+
+    var id: String {
+        self.city
+    }
+
     let city: String
     let time: String
+    let weather: WeatherResponse
 }
 
 final class CityWeatherRowViewModel: ViewModel {
 
     var city: CityInfo
-    var weather: WeatherResponse
 
-    init(city: CityInfo, weather: WeatherResponse) {
+    init(city: CityInfo) {
         self.city = city
-        self.weather = weather
     }
 }
 
@@ -23,7 +27,7 @@ final class CityWeatherRowViewModel: ViewModel {
 
 extension CityInfo {
     static func mock() -> Self {
-        .init(city: "Munich", time: "6:42 PM")
+        .init(city: "Munich", time: "6:42 PM", weather: .mock())
     }
 }
 
