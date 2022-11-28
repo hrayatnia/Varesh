@@ -3,11 +3,11 @@ import SwiftUI
 import Stinsen
 
 final class HomeViewModel: ViewModel {
-    var cities: [CityInfo] = []
+    var cities: [CityInfo] = [.mock()]
 
     @State var searchQuery: String = ""
 
-    @RouterObject var router: NavigationRouter<AppCoordinator>!
+    @RouterObject var router: NavigationRouter<HomePageCoordinator>!
 
     init(cities: [CityInfo]) {
         self.cities = cities
@@ -16,6 +16,6 @@ final class HomeViewModel: ViewModel {
     init() {}
 
     func showSetting() {
-        router.coordinator.routeToSetting()
+        router?.route(to: \.setting)
     }
 }

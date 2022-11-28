@@ -6,14 +6,10 @@ struct SettingView: ViewProtocol {
     @StateObject var viewModel: ViewModelType
 
     var body: some View {
-        NavigationView {
             Form {
                 appearanceSection
                 infoSection
             }.navigationTitle(Text(Constants.settingTitle.rawValue))
-
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 
     fileprivate enum Constants: String {

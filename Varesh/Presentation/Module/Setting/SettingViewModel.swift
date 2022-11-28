@@ -4,40 +4,38 @@ import Combine
 import NetShears
 
 final class SettingViewModel: ViewModel {
-    @Published var theme: Bool = false
-    @Published var unit: Bool = false
+    var theme: Bool = false {
+        didSet {
+            updateTheme(!oldValue)
+        }
+    }
+    var unit: Bool = false {
+        didSet {
+            updateUnit(!oldValue)
+        }
+    }
 
     private var useCase: SettingsUseCase = .init()
-    private var cancellable: [AnyCancellable?] = []
     var appInfo: [(key: String, value: String)] {
         useCase.appInfo.sorted(by: >)
     }
 
     init() {
         theme = useCase.isDark
-        bind()
-        updateUnit()
+        unit = useCase.unit
     }
 
-    private func bind() {
-        cancellable.append( $theme.sink(receiveValue: {
-            AppSettings.shared.currentTheme = $0 ? .dark : .light
-        }))
+    func updateTheme(_ state: Bool) {
+        AppSettings.shared.currentTheme = state ? .dark : .light
     }
 
-    private func updateUnit() {
-        cancellable.append( $unit.sink(receiveValue: {
-            AppSettings.shared.unit = $0 ? .imperial : .metric
-        }))
-    }
-
-    deinit {
-        cancellable.map { $0?.cancel() }
+    func updateUnit(_ state: Bool) {
+        AppSettings.shared.unit = state ? .imperial : .metric
     }
 
     #if DEBUG
     func showNetworkLog() {
-        NetShears.shared.startLogger()
+        NetShears.shared.presentNetworkMonitor()
     }
     #endif
 }
