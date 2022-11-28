@@ -5,7 +5,7 @@ import Stinsen
 final class HomeViewModel: ViewModel {
     var cities: [CityInfo] = [.mock()]
 
-    @State var searchQuery: String = ""
+    var searchQuery: String = ""
 
     @RouterObject var router: NavigationRouter<HomePageCoordinator>!
 

@@ -4,7 +4,7 @@ import Stinsen
 struct HomeView: ViewProtocol {
     typealias ViewModelType = HomeViewModel
 
-    var viewModel: ViewModelType
+    @StateObject var viewModel: ViewModelType
 
     @EnvironmentObject var appRouter: AppCoordinator.Router
 
@@ -12,20 +12,23 @@ struct HomeView: ViewProtocol {
         LazyListView {
             ForEach(viewModel.cities) { data in
                 ZStack {
-                    NavigationLink(destination: Text("Fuck you Apple")) {
-                        EmptyView()
-                    }
                     CityWeatherRow(viewModel: .init(city: data))
                 }
 
             }
         }
         .padding()
-        .navigationTitle("Weather".capitalized)
+        .navigationTitle(Constants.pageTitle.rawValue.capitalized)
         .toolbar {
-            Button(action: viewModel.showSetting, label: { Image(systemName: "gear") })
+            Button(action: viewModel.showSetting, label: { Image(systemName: Constants.systemImage.rawValue) })
         }
-        // .navigationBarSearch(viewModel.$searchQuery)
+        .navigationBarSearch($viewModel.searchQuery, placeholder: Constants.searchPlaceholder.rawValue)
+    }
+    
+    private enum Constants: String {
+        case systemImage = "gear"
+        case searchPlaceholder = "search for other cities"
+        case pageTitle = "Weather"
     }
 }
 
