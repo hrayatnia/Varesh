@@ -32,20 +32,29 @@ extension WeatherResponse {
         return data
     }
 
-    func hourly() -> [WeatherInfo] {
-        []
+    var lowest: Int {
+        Int( data
+            .timelines
+            .first?
+            .intervals
+            .map { $0.values.temperature ?? 220 }.min() ?? 0.0)
     }
 
-    func daily() -> [WeatherInfo] {
-        []
+    var max: Int {
+        let result = data
+            .timelines
+            .first?
+            .intervals
+            .map { $0.values.temperature ?? -100 }.max() ?? 0
+        return Int(result)
     }
 
     var grouped: [Date: [Interval]] {
         self.data.timelines.first!.intervals.sliced(by: [Calendar.Component.year,
-                                               Calendar.Component.month,
-                                               Calendar.Component.day], for: \Interval.startTime)
+                                                         Calendar.Component.month,
+                                                         Calendar.Component.day], for: \Interval.startTime)
     }
-    var todayInterval: [Interval] {
+    func todayInterval() -> [Interval] {
         grouped[Date().get(.year, .month, .day).date ?? Date()] ?? []
     }
 

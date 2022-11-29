@@ -12,7 +12,7 @@ struct WeatherCityInfo: Identifiable {
 
     let city: BasicWeatherModel
     let time: String
-    let weather: WeatherResponse
+    var weather: WeatherResponse
 }
 
 final class CityWeatherRowViewModel: ViewModel {

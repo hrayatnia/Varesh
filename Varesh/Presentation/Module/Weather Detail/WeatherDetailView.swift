@@ -22,14 +22,14 @@ struct WeatherDetailView: ViewProtocol {
                 .padding()
             WeatherDetailSubView(title: Constants.hourlyTitle.rawValue,
                                  axes: .horizontal) {
-                ForEach(viewModel.weatherInfo?.weather.todayInterval ?? []) { data in
+                ForEach(viewModel.hourlyInfo.weather.data.timelines.first?.intervals ?? []) { data in
                     HourlyForecastView(info: data)
                         .padding()
                 }
             }.padding()
             WeatherDetailSubView(title: Constants.dailyTitle.rawValue) {
                 ForEach(viewModel.dailyWeahtherInfo.data.timelines.first?.intervals ?? []) { data in
-                    DailyForecastRow()
+                    DailyForecastRow(interval: data)
                         .padding()
                 }
             }

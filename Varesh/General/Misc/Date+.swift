@@ -15,8 +15,8 @@ extension Date {
     func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
         return calendar.component(component, from: self)
     }
-    
-    func getWeekDay()-> String{
+
+    func getWeekDay() -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE"
             let weekDay = dateFormatter.string(from: self)

@@ -9,6 +9,8 @@ final class WeatherDetailViewModel: ViewModel {
 
     @Published var weatherInfo: WeatherCityInfo?
 
+    @Published var hourlyInfo: WeatherCityInfo = .init(city: .init(name: .init(), location: .init()), time: .init(), weather: .init(data: .init(timelines: .init())))
+
     @Published var dailyWeahtherInfo: WeatherResponse = .init(data: .init(timelines: .init()))
     private(set) var city: BasicWeatherModel
 
@@ -31,6 +33,7 @@ final class WeatherDetailViewModel: ViewModel {
             guard let data = await getWeatherForCity(city) else { return }
             DispatchQueue.main.async {
                 self.weatherInfo = data
+                self.hourlyInfo = data
             }
         }
     }

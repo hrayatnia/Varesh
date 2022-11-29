@@ -17,7 +17,7 @@ struct WeatherDetailHeaderView: View {
                 .foregroundColor(.white)
                 .bold()
                 .padding(4.0)
-            Text("H: 16° L: 0°")
+            Text("H: \(weather?.weather.max ?? 0)° L: \(weather?.weather.lowest ?? 0)°")
                 .font(.footnote)
                 .foregroundColor(.white)
         }
