@@ -47,8 +47,8 @@ final class HomeViewModel: ViewModel {
     }
 
     func getLocation() {
-        cancellable = useCase.locationManager.locationUpdate.sink(receiveValue: { [weak self] location in
-            self?.getCurrentLocationWeather(location)
+        cancellable = useCase.locationManager.locationUpdate.sink(receiveValue: { [unowned self] location in
+            self.getCurrentLocationWeather(location)
         })
     }
 
