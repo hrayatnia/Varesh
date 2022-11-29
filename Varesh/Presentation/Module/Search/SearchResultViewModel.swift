@@ -18,6 +18,10 @@ final class SearchResultViewModel: ViewModel {
         cancellable = useCase
             .service
             .localSearchPublisher
-            .sink(receiveValue: {[weak self] data in self?.cities = data.map { .init(map: $0)} })
+            .sink(receiveValue: {[weak self] data in
+                DispatchQueue.main.async {
+                    self?.cities = data.map { .init(map: $0)}
+                }
+            })
     }
 }
