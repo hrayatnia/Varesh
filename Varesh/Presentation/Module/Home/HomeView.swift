@@ -9,12 +9,28 @@ struct HomeView: ViewProtocol {
     @EnvironmentObject var appRouter: AppCoordinator.Router
 
     var body: some View {
+        ZStack {
+            if viewModel.searchQuery.isEmpty {
+                cityList
+            } else {
+                SearchResultView(text: $viewModel.searchQuery)
+            }
+        }.navigationBarSearch($viewModel.searchQuery,
+                              placeholder: Constants.searchPlaceholder.rawValue)
+
+    }
+    private enum Constants: String {
+        case systemImage = "gear"
+        case searchPlaceholder = "search for other cities"
+        case pageTitle = "Weather"
+    }
+
+    private var cityList: some View {
         LazyListView {
             ForEach(viewModel.cities) { data in
                 ZStack {
                     CityWeatherRow(viewModel: .init(city: data))
                 }
-
             }
         }
         .padding()
@@ -22,13 +38,6 @@ struct HomeView: ViewProtocol {
         .toolbar {
             Button(action: viewModel.showSetting, label: { Image(systemName: Constants.systemImage.rawValue) })
         }
-        .navigationBarSearch($viewModel.searchQuery, placeholder: Constants.searchPlaceholder.rawValue)
-    }
-    
-    private enum Constants: String {
-        case systemImage = "gear"
-        case searchPlaceholder = "search for other cities"
-        case pageTitle = "Weather"
     }
 }
 
