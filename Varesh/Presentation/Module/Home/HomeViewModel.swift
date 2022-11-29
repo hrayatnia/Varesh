@@ -18,4 +18,12 @@ final class HomeViewModel: ViewModel {
     func showSetting() {
         router?.route(to: \.setting)
     }
+
+    func editView() {
+
+    }
+
+    func showDetail(_ city: CityModel) {
+        router.route(to: \.weatherDetail, city)
+    }
 }

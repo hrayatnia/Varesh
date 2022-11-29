@@ -2,7 +2,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-struct CityModel: Identifiable {
+struct CityModel: Identifiable, Codable {
 
     var id: String {
         name

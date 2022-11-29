@@ -11,7 +11,7 @@ struct CityWeatherRow: ViewProtocol {
             CardView {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text(viewModel.city.city)
+                        Text(viewModel.city.city.name)
                             .font(.title)
                             .foregroundColor(.white)
                             .bold()

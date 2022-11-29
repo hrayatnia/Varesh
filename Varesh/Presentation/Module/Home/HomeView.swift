@@ -6,7 +6,7 @@ struct HomeView: ViewProtocol {
 
     @StateObject var viewModel: ViewModelType
 
-    @EnvironmentObject var appRouter: AppCoordinator.Router
+    // @EnvironmentObject var appRouter: AppCoordinator.Router
 
     var body: some View {
         ZStack {
@@ -19,25 +19,31 @@ struct HomeView: ViewProtocol {
                               placeholder: Constants.searchPlaceholder.rawValue)
 
     }
-    private enum Constants: String {
-        case systemImage = "gear"
-        case searchPlaceholder = "search for other cities"
-        case pageTitle = "Weather"
-    }
 
     private var cityList: some View {
         LazyListView {
             ForEach(viewModel.cities) { data in
                 ZStack {
                     CityWeatherRow(viewModel: .init(city: data))
+                        .onTapGesture {
+                            viewModel.showDetail(data.city)
+                        }
                 }
             }
         }
         .padding()
         .navigationTitle(Constants.pageTitle.rawValue.capitalized)
         .toolbar {
+            Button(Constants.editButton.rawValue, action: { viewModel.editView() })
             Button(action: viewModel.showSetting, label: { Image(systemName: Constants.systemImage.rawValue) })
         }
+    }
+
+    private enum Constants: String {
+        case systemImage = "gear"
+        case searchPlaceholder = "search for other cities"
+        case pageTitle = "Weather"
+        case editButton = "Edit"
     }
 }
 
