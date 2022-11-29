@@ -1,4 +1,5 @@
 import Foundation
+import KWeatherService
 
 enum WeatherDetailError: Error {
     case limitReached
@@ -19,5 +20,9 @@ struct WeatherDetailUseCase {
     func cityWeather(for location: BasicWeatherModel) async throws -> WeatherCityInfo? {
         try? await weather.weatherForCity(name: location.name,
                                           for: location.location)
+    }
+
+    func dailyForecast(for location: BasicWeatherModel) async throws -> WeatherResponse? {
+        try? await weather.dailyForcast(for: location.location)
     }
 }

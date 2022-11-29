@@ -8,7 +8,7 @@ struct HourlyForecastView: View {
             Text(info.startTime.hour)
                 .font(.caption)
                 .foregroundColor(.white)
-            Image(systemName: "cloud.sun")
+            WeatherCode(value: "\(interval.values.weatherCode ?? 1001)").systemImage()
                 .font(.headline)
                 .foregroundColor(.white)
             Text("\(Int(info.values.temperature ?? 0))°")

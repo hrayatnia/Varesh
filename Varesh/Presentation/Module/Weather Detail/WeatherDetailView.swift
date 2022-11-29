@@ -28,7 +28,7 @@ struct WeatherDetailView: ViewProtocol {
                 }
             }.padding()
             WeatherDetailSubView(title: Constants.dailyTitle.rawValue) {
-                ForEach(0..<10) { _ in
+                ForEach(viewModel.dailyWeahtherInfo.data.timelines.first?.intervals ?? []) { data in
                     DailyForecastRow()
                         .padding()
                 }

@@ -32,4 +32,17 @@ enum WeatherCode: String {
         let date = Date()
         return date > sunrise && date < sunset
     }
+    
+    func systemImage() -> Image {
+        switch self {
+        case .clear:
+            return Image(systemName: "sun.max")
+        case .cloudy:
+            return Image(systemName: "cloud")
+        case .rain:
+            return Image(systemName: "cloud.rain")
+        case .snow:
+            return Image(systemName: "cloud.snow")
+        }
+    }
 }

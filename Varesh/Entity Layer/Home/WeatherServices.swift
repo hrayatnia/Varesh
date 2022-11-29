@@ -12,8 +12,8 @@ struct WeatherServices {
                  weather: data)
     }
 
-    func hourlyForCast(for location: CLLocationCoordinate2D) async {
-        try? await weather(for: location, range: .oneDay)
+    func dailyForcast(for location: CLLocationCoordinate2D) async throws -> WeatherResponse? {
+        try? await weather(for: location, range: .tenDay, timestep: .oneDay)
     }
 
     private func weather(for location: CLLocationCoordinate2D,
