@@ -39,3 +39,11 @@ minimum requirement:
 * Xcode cloud is enabled
 * The push back to the home view controller is not covered intentionally.
 * Still there's room for improvement. 
+
+
+wish list:
+
+* fixing minor bugs such as multiple ID issue in search.
+* adding transition to card view
+* adding more info to the view
+* cleaning view
