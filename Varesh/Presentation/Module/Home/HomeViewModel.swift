@@ -3,7 +3,7 @@ import SwiftUI
 import Stinsen
 
 final class HomeViewModel: ViewModel {
-    var cities: [CityInfo] = [.mock()]
+    var cities: [CityInfo] = []
 
     @Published var searchQuery: String = ""
 
@@ -16,7 +16,7 @@ final class HomeViewModel: ViewModel {
     }
 
     init() {
-        cities += useCase.cities().map { .init(city: $0, time: "", weather: .mock()) }
+        // cities += useCase.cities().map { .init(city: $0, time: "", weather: .mock()) }
     }
 
     func showSetting() {
@@ -29,5 +29,9 @@ final class HomeViewModel: ViewModel {
 
     func showDetail(_ city: CityModel) {
         router.route(to: \.weatherDetail, city)
+    }
+
+    func requestForLocation() {
+        useCase.requestForLocation()
     }
 }

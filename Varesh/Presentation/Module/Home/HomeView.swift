@@ -1,6 +1,7 @@
 import SwiftUI
 import KDesignSystem
 import Stinsen
+
 struct HomeView: ViewProtocol {
     typealias ViewModelType = HomeViewModel
 
@@ -15,8 +16,12 @@ struct HomeView: ViewProtocol {
             } else {
                 SearchResultView(text: $viewModel.searchQuery)
             }
-        }.navigationBarSearch($viewModel.searchQuery,
+        }
+        .navigationBarSearch($viewModel.searchQuery,
                               placeholder: Constants.searchPlaceholder.rawValue)
+        .onAppear {
+            viewModel.requestForLocation()
+        }
 
     }
 
@@ -29,6 +34,12 @@ struct HomeView: ViewProtocol {
                             viewModel.showDetail(data.city)
                         }
                 }
+            }
+        }
+        .emptyState($viewModel.cities.isEmpty) {
+            VStack(alignment: .center) {
+                Text(Constants.emptyState.rawValue)
+                    .font(.headline)
             }
         }
         .padding()
@@ -44,6 +55,7 @@ struct HomeView: ViewProtocol {
         case searchPlaceholder = "search for other cities"
         case pageTitle = "Weather"
         case editButton = "Edit"
+        case emptyState = "please add a city or enable your location service"
     }
 }
 

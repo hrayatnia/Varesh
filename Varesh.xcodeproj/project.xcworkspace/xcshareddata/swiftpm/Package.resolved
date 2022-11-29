@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hrayatnia/KDesignSystem",
       "state" : {
-        "revision" : "5c91e48db1b5a234838ff9b54e099b7664514c77",
-        "version" : "0.0.5"
+        "revision" : "7d1828ec6fe1890f4d7e05b8fe127810393845e4",
+        "version" : "0.0.7"
       }
     },
     {
