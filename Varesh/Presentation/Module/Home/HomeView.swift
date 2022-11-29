@@ -10,7 +10,7 @@ struct HomeView: ViewProtocol {
     // @EnvironmentObject var appRouter: AppCoordinator.Router
 
     var body: some View {
-        ZStack {
+        VStack {
             if viewModel.searchQuery.isEmpty {
                 cityList
             } else {
@@ -26,15 +26,16 @@ struct HomeView: ViewProtocol {
     }
 
     private var cityList: some View {
-        LazyListView {
-            ForEach(viewModel.cities) { data in
-                ZStack {
+        VStack {
+            LazyListView {
+                ForEach(viewModel.cities) { data in
                     CityWeatherRow(viewModel: .init(city: data))
                         .onTapGesture {
                             viewModel.showDetail(data.city)
                         }
                 }
             }
+            Spacer()
         }
         .emptyState($viewModel.cities.isEmpty) {
             VStack(alignment: .center) {

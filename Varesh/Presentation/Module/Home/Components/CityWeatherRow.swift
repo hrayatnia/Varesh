@@ -15,27 +15,27 @@ struct CityWeatherRow: ViewProtocol {
                             .font(.title)
                             .foregroundColor(.white)
                             .bold()
-                        Text(viewModel.city.time)
+                        Text(viewModel.city.weather.current()?.hour ?? "--:--")
                             .font(.subheadline)
                             .foregroundColor(.white)
                     }
                     Spacer()
-                    Text("14°")
+                    Text("\(Int(viewModel.city.weather.current()?.current ?? 0))°" )
                         .font(.largeTitle)
                         .foregroundColor(.white)
                 }.padding()
                 HStack(alignment: .center) {
-                    Text("Cloudy")
+                    Text(viewModel.city.weather.current()?.weatherCode.rawValue ?? "----")
                         .font(.footnote)
                         .foregroundColor(.white)
                         .bold()
                     Spacer()
-                    Text("H: 16° L: 0°")
+                    Text("H: --° L: --°")
                         .font(.footnote)
                         .foregroundColor(.white)
                 }.padding()
             }
-            .background(Image("clear-night").blur(radius: 24))
+            .background(( viewModel.city.weather.current()?.image() ?? Image("clear-night")).blur(radius: 24))
             .modifier(CardModifier(radius: 24.0, shadow: .clear))
         }
 }

@@ -5,7 +5,7 @@ import Stinsen
 import CoreLocation
 
 final class HomeViewModel: ViewModel {
-    @Published var cities: [CityInfo] = []
+    @Published var cities: [WeatherCityInfo] = []
 
     @Published var searchQuery: String = ""
 
@@ -15,7 +15,7 @@ final class HomeViewModel: ViewModel {
 
     private let useCase: HomeUseCase = .init()
 
-    init(cities: [CityInfo]) {
+    init(cities: [WeatherCityInfo]) {
         self.cities = cities
     }
 
@@ -38,7 +38,7 @@ final class HomeViewModel: ViewModel {
 //
 //    }
 
-    func showDetail(_ city: CityModel) {
+    func showDetail(_ city: BasicWeatherModel) {
         router.route(to: \.weatherDetail, city)
     }
 
@@ -52,7 +52,7 @@ final class HomeViewModel: ViewModel {
         })
     }
 
-    func getWeatherForCity(_ city: CityModel) async -> CityInfo? {
+    func getWeatherForCity(_ city: BasicWeatherModel) async -> WeatherCityInfo? {
         try? await useCase.cityWeather(for: city)
     }
 

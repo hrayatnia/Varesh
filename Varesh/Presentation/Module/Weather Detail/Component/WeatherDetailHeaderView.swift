@@ -1,17 +1,18 @@
 import SwiftUI
 
 struct WeatherDetailHeaderView: View {
+    @Binding var weather: WeatherCityInfo?
     var body: some View {
         VStack {
-            Text("Munich")
+            Text(weather?.city.name ?? "---")
                 .font(.title)
                 .foregroundColor(.white)
                 .bold()
                 .padding(4.0)
-            Text("14°")
+            Text("\(Int(weather?.weather.current()?.current ?? 0))°")
                 .font(.largeTitle)
                 .foregroundColor(.white)
-            Text("cloudy")
+            Text(weather?.weather.current()?.weatherCode.rawValue ?? "")
                 .font(.footnote)
                 .foregroundColor(.white)
                 .bold()
@@ -22,12 +23,3 @@ struct WeatherDetailHeaderView: View {
         }
     }
 }
-
-#if DEBUG
-struct WeatherDetailHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDetailHeaderView()
-            .colorScheme(.dark)
-    }
-}
-#endif

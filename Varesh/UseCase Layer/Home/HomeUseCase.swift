@@ -6,7 +6,7 @@ struct HomeUseCase {
 
     private let weather: WeatherServices = .init()
 
-    func cities() -> [CityModel] {
+    func cities() -> [BasicWeatherModel] {
         CityRepository.shared.fetchCities()
     }
 
@@ -14,7 +14,7 @@ struct HomeUseCase {
         locationManager.requestAuthorisation()
     }
 
-    func cityWeather(for location: CityModel) async throws -> CityInfo? {
+    func cityWeather(for location: BasicWeatherModel) async throws -> WeatherCityInfo? {
         try? await weather.weatherForCity(name: location.name,
                                           for: location.location)
     }

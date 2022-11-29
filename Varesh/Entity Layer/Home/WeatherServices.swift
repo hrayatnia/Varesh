@@ -4,27 +4,30 @@ import CoreLocation
 
 struct WeatherServices {
 
-    func weatherForCity(name: String, for location: CLLocationCoordinate2D) async throws -> CityInfo {
-        guard let data = try? await weather(for: location, range: .oneDay) else { throw WeatherNetworkError.notFound }
-        return CityInfo(city: CityModel(name: name, location: location),
+    func weatherForCity(name: String, for location: CLLocationCoordinate2D) async throws -> WeatherCityInfo {
+        guard let data = try? await weather(for: location,
+                                            range: .oneDay) else { throw WeatherNetworkError.notFound }
+        return WeatherCityInfo(city: BasicWeatherModel(name: name, location: location),
                  time: "\(Date())",
                  weather: data)
     }
 
     func hourlyForCast(for location: CLLocationCoordinate2D) async {
-        try? await weather(for: location, range: .oneDay, timestep: .oneHour)
+        try? await weather(for: location, range: .oneDay)
     }
 
     private func weather(for location: CLLocationCoordinate2D,
                          range: WeatherServices.Range,
-                         timestep: WeatherRequestTimestamps = .oneDay) async throws -> WeatherResponse? {
+                         timestep: WeatherRequestTimestamps = .oneHour) async throws -> WeatherResponse? {
          let service = WeatherService(long: location.longitude,
                                       lat: location.latitude,
                                       range: range.rawValue,
                                       timestep: timestep,
                                       unit: AppSettings.shared.unit,
                                       fields: .temperature,
-                                      .weatherCode)
+                                      .weatherCode,
+                                      .sunrise,
+                                      .sunset)
         await service.run()
         switch service.result {
         case .success(let data):

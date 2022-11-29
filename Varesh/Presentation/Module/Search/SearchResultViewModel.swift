@@ -3,7 +3,7 @@ import Combine
 import Stinsen
 
 final class SearchResultViewModel: ViewModel {
-    @Published var cities: [CityModel] = []
+    @Published var cities: [BasicWeatherModel] = []
     private var useCase: SearchUseCase = .init()
     private var cancellable: AnyCancellable?
 
@@ -28,7 +28,7 @@ final class SearchResultViewModel: ViewModel {
             })
     }
 
-    func showWeatherDetail(_ city: CityModel) {
+    func showWeatherDetail(_ city: BasicWeatherModel) {
         router.route(to: \.weatherDetailEditing, city)
     }
 }

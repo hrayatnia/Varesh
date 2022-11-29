@@ -18,12 +18,12 @@ struct WeatherDetailView: ViewProtocol {
             if editing {
                 addAction
             }
-            WeatherDetailHeaderView()
+            WeatherDetailHeaderView(weather: $viewModel.weatherInfo)
                 .padding()
             WeatherDetailSubView(title: Constants.hourlyTitle.rawValue,
                                  axes: .horizontal) {
-                ForEach(0..<10) { _ in
-                    HourlyForecastView()
+                ForEach(viewModel.weatherInfo?.weather.todayInterval ?? []) { data in
+                    HourlyForecastView(info: data)
                         .padding()
                 }
             }.padding()
@@ -35,7 +35,7 @@ struct WeatherDetailView: ViewProtocol {
             }
             .padding()
         }
-        .background(Image("clear-day")
+        .background((viewModel.weatherInfo?.weather.current()?.image() ?? Image("clear-day"))
             .scaledToFill()
             .blur(radius: 24))
     }
@@ -57,12 +57,3 @@ struct WeatherDetailView: ViewProtocol {
         case dailyTitle = "Daily forecast"
     }
 }
-
-#if DEBUG
-struct WeatherDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDetailView(viewModel: .init(city: .init(name: "Munich", location: .init())))
-            .colorScheme(.dark)
-    }
-}
-#endif
