@@ -6,6 +6,8 @@ final class HomePageCoordinator: Stinsen.NavigationCoordinatable {
 
     @Root var start = makeStart
     @Route(.push) var setting = makeSettingView
+    @Route(.push) var weatherDetail = makeWeatherDetail
+    @Route(.modal) var weatherDetailEditing = makeEditingWeatherDetail
 
     @ViewBuilder private func makeSettingView() -> some View {
         SettingView(viewModel: .init())
@@ -13,6 +15,14 @@ final class HomePageCoordinator: Stinsen.NavigationCoordinatable {
 
     @ViewBuilder private func makeStart() -> some View {
         HomeView(viewModel: .init())
+    }
+
+    @ViewBuilder private func makeWeatherDetail(_ city: BasicWeatherModel) -> some View {
+        WeatherDetailView(viewModel: .init(city: city))
+    }
+
+    @ViewBuilder private func makeEditingWeatherDetail(_ city: BasicWeatherModel) -> some View {
+        WeatherDetailView(viewModel: .init(city: city), editing: true)
     }
 
 }

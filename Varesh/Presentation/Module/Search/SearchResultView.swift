@@ -20,6 +20,9 @@ struct SearchResultView: ViewProtocol {
             Text("searching for: \(text)").onChange(of: text, perform: {_ in viewModel.search(for: text)})
             List(viewModel.cities) { city in
                 Text(city.name)
+                    .onTapGesture {
+                        viewModel.showWeatherDetail(city)
+                    }
             }
         }
     }

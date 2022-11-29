@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hrayatnia/KDesignSystem",
       "state" : {
-        "revision" : "5c91e48db1b5a234838ff9b54e099b7664514c77",
-        "version" : "0.0.5"
+        "revision" : "7d1828ec6fe1890f4d7e05b8fe127810393845e4",
+        "version" : "0.0.7"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hrayatnia/KWeatherService",
       "state" : {
-        "revision" : "8f67ae50e168f952c8a5714161a82b9ce610a011",
-        "version" : "1.0.2"
+        "revision" : "2ae551a036b67279425462d5f19815525e970b95",
+        "version" : "1.0.4"
       }
     },
     {

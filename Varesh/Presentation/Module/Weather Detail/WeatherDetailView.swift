@@ -4,37 +4,56 @@ import KDesignSystem
 struct WeatherDetailView: ViewProtocol {
     typealias ViewModelType = WeatherDetailViewModel
 
-    @StateObject var viewModel: WeatherDetailViewModel = .init()
+    @ObservedObject var viewModel: WeatherDetailViewModel
+
+    private let editing: Bool
+
+    init(viewModel: WeatherDetailViewModel, editing: Bool = false) {
+        self.viewModel = viewModel
+        self.editing = editing
+    }
 
     var body: some View {
         LazyListView {
-            WeatherDetailHeaderView()
+            if editing {
+                addAction
+            }
+            WeatherDetailHeaderView(weather: $viewModel.weatherInfo)
                 .padding()
-            WeatherDetailSubView(title: "hourly forecast",
+            WeatherDetailSubView(title: Constants.hourlyTitle.rawValue,
                                  axes: .horizontal) {
-                ForEach(0..<10) { _ in
-                    HourlyForecastView()
+                ForEach(viewModel.hourlyInfo.weather.data.timelines.first?.intervals ?? []) { data in
+                    HourlyForecastView(info: data)
                         .padding()
                 }
             }.padding()
-
-            WeatherDetailSubView(title: "Daily forecast") {
-                ForEach(0..<10) { _ in
-                    DailyForecastRow()
+            WeatherDetailSubView(title: Constants.dailyTitle.rawValue) {
+                ForEach(viewModel.dailyWeahtherInfo.data.timelines.first?.intervals ?? []) { data in
+                    DailyForecastRow(interval: data)
                         .padding()
                 }
             }
             .padding()
         }
-        .background(Image("clear-night").blur(radius: 24))
+        .background((viewModel.weatherInfo?.weather.current()?.image() ?? Image("clear-day"))
+            .scaledToFill()
+            .blur(radius: 24))
     }
-}
 
-#if DEBUG
-struct WeatherDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDetailView()
-            .colorScheme(.dark)
+    private var addAction: some View {
+        HStack {
+            Button(Constants.editingCancelButton.rawValue, action: viewModel.cancelAction)
+                .foregroundColor(.white)
+            Spacer()
+            Button(Constants.editingAddButton.rawValue, action: viewModel.addCity)
+                .foregroundColor(.white)
+        }.padding()
+    }
+
+    private enum Constants: String {
+        case editingCancelButton = "Cancel"
+        case editingAddButton = "Add"
+        case hourlyTitle = "hourly forecast"
+        case dailyTitle = "Daily forecast"
     }
 }
-#endif

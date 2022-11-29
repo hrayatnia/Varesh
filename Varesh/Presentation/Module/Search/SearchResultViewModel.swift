@@ -1,10 +1,13 @@
 import SwiftUI
 import Combine
+import Stinsen
 
 final class SearchResultViewModel: ViewModel {
-    @Published var cities: [CityModel] = []
+    @Published var cities: [BasicWeatherModel] = []
     private var useCase: SearchUseCase = .init()
     private var cancellable: AnyCancellable?
+
+    @RouterObject var router: NavigationRouter<HomePageCoordinator>!
 
     init() {
         bindCities()
@@ -20,8 +23,12 @@ final class SearchResultViewModel: ViewModel {
             .localSearchPublisher
             .sink(receiveValue: {[weak self] data in
                 DispatchQueue.main.async {
-                    self?.cities = data.map { .init(map: $0)}
+                    self?.cities = Set(data).map { .init(map: $0) }
                 }
             })
+    }
+
+    func showWeatherDetail(_ city: BasicWeatherModel) {
+        router.route(to: \.weatherDetailEditing, city)
     }
 }

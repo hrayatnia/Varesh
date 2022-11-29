@@ -36,16 +36,3 @@ struct WeatherDetailSubView<Content>: View where Content: View {
         }.modifier(CardModifier(radius: 12.0))
     }
 }
-
-#if DEBUG
-struct WeatherDetailHorizontalSubView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDetailSubView(title: "hourly forecast", axes: .horizontal) {
-            VStack {
-                HourlyForecastView()
-                    .padding()
-            }
-        }
-    }
-}
-#endif

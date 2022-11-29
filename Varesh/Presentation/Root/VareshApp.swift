@@ -15,7 +15,6 @@ struct VareshApp: App {
     init() {
         #if DEBUG
         NetShears.shared.startListener()
-        NetShears.shared.startLogger()
         #endif
     }
 

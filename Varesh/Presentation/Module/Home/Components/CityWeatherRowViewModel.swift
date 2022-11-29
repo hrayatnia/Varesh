@@ -2,32 +2,38 @@ import Foundation
 import SwiftUI
 import KWeatherService
 import Combine
+import CoreLocation
 
-struct CityInfo: Identifiable {
+struct WeatherCityInfo: Identifiable {
 
     var id: String {
-        self.city
+        self.city.name
     }
 
-    let city: String
+    let city: BasicWeatherModel
     let time: String
-    let weather: WeatherResponse
+    var weather: WeatherResponse
 }
 
 final class CityWeatherRowViewModel: ViewModel {
 
-    var city: CityInfo
+    var city: WeatherCityInfo
 
-    init(city: CityInfo) {
+    init(city: WeatherCityInfo) {
         self.city = city
     }
+
 }
 
 #if DEBUG
 
-extension CityInfo {
+extension WeatherCityInfo {
     static func mock() -> Self {
-        .init(city: "Munich", time: "6:42 PM", weather: .mock())
+        .init(city: .init(name: "Munich",
+                          location: .init(latitude: 41.0,
+                                          longitude: 57.0)),
+              time: "6:42 PM",
+              weather: .mock())
     }
 }
 
