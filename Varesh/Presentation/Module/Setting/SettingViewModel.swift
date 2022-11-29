@@ -35,6 +35,7 @@ final class SettingViewModel: ViewModel {
 
     #if DEBUG
     func showNetworkLog() {
+        NetShears.shared.startLogger()
         NetShears.shared.presentNetworkMonitor()
     }
     #endif

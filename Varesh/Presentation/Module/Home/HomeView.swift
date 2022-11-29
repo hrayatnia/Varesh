@@ -45,7 +45,7 @@ struct HomeView: ViewProtocol {
         .padding()
         .navigationTitle(Constants.pageTitle.rawValue.capitalized)
         .toolbar {
-            Button(Constants.editButton.rawValue, action: { viewModel.editView() })
+            // Button(Constants.editButton.rawValue, action: { viewModel.editView() })
             Button(action: viewModel.showSetting, label: { Image(systemName: Constants.systemImage.rawValue) })
         }
     }
