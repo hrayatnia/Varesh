@@ -9,11 +9,15 @@ final class HomeViewModel: ViewModel {
 
     @RouterObject var router: NavigationRouter<HomePageCoordinator>!
 
+    private let useCase: HomeUseCase = .init()
+
     init(cities: [CityInfo]) {
         self.cities = cities
     }
 
-    init() {}
+    init() {
+        cities += useCase.cities().map { .init(city: $0, time: "", weather: .mock()) }
+    }
 
     func showSetting() {
         router?.route(to: \.setting)

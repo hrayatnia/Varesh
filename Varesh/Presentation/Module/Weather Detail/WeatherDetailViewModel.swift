@@ -15,7 +15,7 @@ final class WeatherDetailViewModel: ViewModel {
     private var useCase: WeatherDetailUseCase = .init()
 
     func addCity() {
-        useCase.saveCity(city)
+        try? useCase.saveCity(city)
     }
 
     func cancelAction() {
