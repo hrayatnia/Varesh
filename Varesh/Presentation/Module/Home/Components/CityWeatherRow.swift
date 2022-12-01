@@ -36,6 +36,7 @@ struct CityWeatherRow: ViewProtocol {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipped()
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .blur(radius: 24))
             .modifier(CardModifier(radius: 24.0, shadow: .clear))
             .onTapGesture {
