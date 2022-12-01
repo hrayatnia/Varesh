@@ -21,6 +21,7 @@ struct HomeView: ViewProtocol {
                               placeholder: Constants.searchPlaceholder.rawValue)
         .onAppear {
             viewModel.requestForLocation()
+            viewModel.load()
         }
 
     }

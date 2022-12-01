@@ -14,7 +14,7 @@ final class HomePageCoordinator: Stinsen.NavigationCoordinatable {
     }
 
     @ViewBuilder private func makeStart() -> some View {
-        HomeView(viewModel: .init())
+        HomeView(viewModel: .init(cities: []))
     }
 
     @ViewBuilder private func makeWeatherDetail(_ city: BasicWeatherModel) -> some View {

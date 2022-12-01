@@ -19,10 +19,6 @@ final class HomeViewModel: ViewModel {
         self.cities = cities
     }
 
-    init() {
-       load()
-    }
-
     func load() {
         Task {
             await useCase.cities().asyncMap { data in
