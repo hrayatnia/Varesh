@@ -8,6 +8,7 @@ final class AppSettings: ObservableObject {
 
     @AppStorage("current_theme") var currentTheme: Theme = .light
     @AppStorage("unit") var unit: WeatherUnitSystem = .metric
+    let secretKey: String = "eY84BndzVZn2BTbeZCuQF3XWkhKozunQ"
 
     var appInfo: [String: String] {
         [
