@@ -44,19 +44,3 @@ struct CityWeatherRow: ViewProtocol {
             }
         }
 }
-
-#if DEBUG
-struct CityWeatherRow_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            LazyListView {
-                ForEach(0..<10) { _ in
-                    CityWeatherRow(viewModel: .init(city: .mock()))
-                }
-            }.padding()
-                .navigationTitle("Weather".capitalized)
-        }
-    }
-
-}
-#endif

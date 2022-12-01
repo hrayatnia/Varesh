@@ -27,12 +27,3 @@ struct SearchResultView: ViewProtocol {
         }
     }
 }
-
-#if DEBUG
-struct SearchResultView_Previews: PreviewProvider {
-    @State static var searchText: String = "Test"
-    static var previews: some View {
-        SearchResultView(text: $searchText)
-    }
-}
-#endif
