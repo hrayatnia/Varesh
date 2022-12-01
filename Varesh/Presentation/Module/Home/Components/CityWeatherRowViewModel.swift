@@ -4,7 +4,14 @@ import KWeatherService
 import Combine
 import CoreLocation
 
-struct WeatherCityInfo: Identifiable {
+struct WeatherCityInfo: Identifiable, Hashable, Equatable {
+    static func == (lhs: WeatherCityInfo, rhs: WeatherCityInfo) -> Bool {
+        lhs.city == rhs.city
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(city)
+    }
 
     var id: String {
         self.city.name

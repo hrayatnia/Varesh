@@ -23,7 +23,7 @@ final class SearchResultViewModel: ViewModel {
             .localSearchPublisher
             .sink(receiveValue: {[weak self] data in
                 DispatchQueue.main.async {
-                    self?.cities = Set(data).map { .init(map: $0) }
+                    self?.cities = Array(Set(Array(data.map { .init(map: $0) })))
                 }
             })
     }

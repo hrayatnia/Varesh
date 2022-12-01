@@ -2,10 +2,17 @@ import Foundation
 import CoreLocation
 import MapKit
 
-struct BasicWeatherModel: Identifiable, Codable {
+struct BasicWeatherModel: Identifiable, Codable, Hashable {
+    static func == (lhs: BasicWeatherModel, rhs: BasicWeatherModel) -> Bool {
+        lhs.name == rhs.name
+    }
 
     var id: String {
         name
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
 
     var name: String
