@@ -22,9 +22,9 @@ final class HomeViewModel: ViewModel {
     func load() {
         Task {
             await useCase.cities().asyncMap { [unowned self] data in
-                self.cities.removeAll(where: { data.name == $0.city.name })
                 guard let data = await getWeatherForCity(data) else { return }
                 DispatchQueue.main.async {
+                    self.cities.removeAll(where: { data.city.name == $0.city.name })
                     self.cities.append(data)
                 }
             }
