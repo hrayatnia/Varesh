@@ -28,6 +28,7 @@ final class HomeViewModel: ViewModel {
                 }
             }
         }
+        getLocation()
     }
 
     func showSetting() {
