@@ -26,7 +26,13 @@ extension SettingView {
     var appearanceSection: some View {
         Section {
             Toggle(Constants.darkTheme.rawValue, isOn: $viewModel.theme)
+                .onChange(of: viewModel.theme, perform: {
+                    viewModel.updateTheme($0)
+                })
             Toggle(Constants.unitToggle.rawValue, isOn: $viewModel.unit)
+                .onChange(of: viewModel.unit, perform: {
+                    viewModel.updateUnit($0)
+                })
             #if DEBUG
             Button("Network Logs", action: viewModel.showNetworkLog)
             #endif
