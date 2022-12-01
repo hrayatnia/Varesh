@@ -36,7 +36,10 @@ struct WeatherDetailView: ViewProtocol {
             .padding()
         }
         .background((viewModel.weatherInfo?.weather.current()?.image() ?? Image("clear-day"))
-            .scaledToFill()
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .clipped()
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .blur(radius: 24))
     }
 
