@@ -12,13 +12,13 @@ struct WeatherServices {
                  weather: data)
     }
 
-    func dailyForcast(for location: CLLocationCoordinate2D) async throws -> WeatherResponse? {
-        try? await weather(for: location, range: .tenDay, timestep: .oneDay)
+    func dailyForcast(for location: CLLocationCoordinate2D) async throws -> WeatherResponse {
+        try await weather(for: location, range: .tenDay, timestep: .oneDay)
     }
 
     private func weather(for location: CLLocationCoordinate2D,
                          range: WeatherServices.Range,
-                         timestep: WeatherRequestTimestamps = .oneHour) async throws -> WeatherResponse? {
+                         timestep: WeatherRequestTimestamps = .oneHour) async throws -> WeatherResponse {
          let service = WeatherService(long: location.longitude,
                                       lat: location.latitude,
                                       range: range.rawValue,
@@ -35,7 +35,7 @@ struct WeatherServices {
         case .failure(let error):
             throw error
         case .none:
-            return nil
+            throw NSError()
         }
     }
 
