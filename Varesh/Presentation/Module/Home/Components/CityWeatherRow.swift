@@ -34,7 +34,7 @@ struct CityWeatherRow: ViewProtocol {
             }
             .background(( viewModel.city.weather.current()?.image() ?? Image("clear-night"))
                 .resizable()
-                .scaledToFill()
+                .aspectRatio(contentMode: .fill)
                 .clipped()
                 .blur(radius: 24))
             .modifier(CardModifier(radius: 24.0, shadow: .clear))
