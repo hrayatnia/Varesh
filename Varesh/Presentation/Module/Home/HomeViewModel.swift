@@ -36,14 +36,6 @@ final class HomeViewModel: ViewModel {
         router.route(to: \.setting)
     }
 
-//    func editView() {
-//
-//    }
-
-    func showDetail(_ city: BasicWeatherModel) {
-        router.route(to: \.weatherDetail, city)
-    }
-
     func requestForLocation() {
         useCase.requestForLocation()
     }

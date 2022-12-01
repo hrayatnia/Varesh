@@ -32,8 +32,15 @@ struct CityWeatherRow: ViewProtocol {
                         .foregroundColor(.white)
                 }.padding()
             }
-            .background(( viewModel.city.weather.current()?.image() ?? Image("clear-night")).blur(radius: 24))
+            .background(( viewModel.city.weather.current()?.image() ?? Image("clear-night"))
+                .resizable()
+                .scaledToFill()
+                .clipped()
+                .blur(radius: 24))
             .modifier(CardModifier(radius: 24.0, shadow: .clear))
+            .onTapGesture {
+                viewModel.showDetail(viewModel.city.city)
+            }
         }
 }
 

@@ -3,6 +3,7 @@ import SwiftUI
 import KWeatherService
 import Combine
 import CoreLocation
+import Stinsen
 
 struct WeatherCityInfo: Identifiable, Hashable, Equatable {
     static func == (lhs: WeatherCityInfo, rhs: WeatherCityInfo) -> Bool {
@@ -24,10 +25,16 @@ struct WeatherCityInfo: Identifiable, Hashable, Equatable {
 
 final class CityWeatherRowViewModel: ViewModel {
 
-    var city: WeatherCityInfo
+    @Published var city: WeatherCityInfo
+
+    @RouterObject var router: NavigationRouter<HomePageCoordinator>!
 
     init(city: WeatherCityInfo) {
         self.city = city
+    }
+
+    func showDetail(_ city: BasicWeatherModel) {
+        router.route(to: \.weatherDetail, city)
     }
 
 }

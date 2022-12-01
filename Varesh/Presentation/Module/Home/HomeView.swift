@@ -31,9 +31,6 @@ struct HomeView: ViewProtocol {
             LazyListView {
                 ForEach(viewModel.cities, id: \.city) { data in
                     CityWeatherRow(viewModel: .init(city: data))
-                        .onTapGesture {
-                            viewModel.showDetail(data.city)
-                        }
                 }
             }
             Spacer()
