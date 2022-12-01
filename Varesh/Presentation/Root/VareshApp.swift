@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+#if DEBUG && os(iOS)
 import NetShears
+#endif
 import KWeatherService
 @main
 struct VareshApp: App {
@@ -17,7 +19,7 @@ struct VareshApp: App {
 
     init() {
         APISetting.set(secretKey: AppSettings.shared.secretKey)
-        #if DEBUG
+        #if DEBUG && os(iOS)
         NetShears.shared.startListener()
         #endif
     }
