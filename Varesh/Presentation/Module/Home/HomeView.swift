@@ -23,6 +23,7 @@ struct HomeView: ViewProtocol {
             viewModel.requestForLocation()
             viewModel.load()
         }
+        .toast(message: viewModel.error, isShowing: $viewModel.showError, duration: 0.5)
 
     }
 

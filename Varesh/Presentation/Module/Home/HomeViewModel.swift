@@ -9,6 +9,10 @@ final class HomeViewModel: ViewModel {
 
     @Published var searchQuery: String = ""
 
+    @Published var error: String = ""
+
+    @Published var showError: Bool = false
+
     @RouterObject var router: NavigationRouter<HomePageCoordinator>!
 
     private var cancellable: AnyCancellable?
@@ -22,10 +26,17 @@ final class HomeViewModel: ViewModel {
     func load() {
         Task {
             await useCase.cities().asyncMap { [unowned self] data in
-                guard let data = await getWeatherForCity(data) else { return }
-                DispatchQueue.main.async {
-                    self.cities.removeAll(where: { data.city.name == $0.city.name })
-                    self.cities.append(data)
+                do {
+                    let data = try await getWeatherForCity(data)
+                    DispatchQueue.main.async {
+                        self.cities.removeAll(where: { data.city.name == $0.city.name })
+                        self.cities.append(data)
+                    }
+                } catch let netError {
+                    DispatchQueue.main.async {
+                        self.error = netError.localizedDescription
+                        self.showError = true
+                    }
                 }
             }
         }
@@ -46,8 +57,8 @@ final class HomeViewModel: ViewModel {
         })
     }
 
-    func getWeatherForCity(_ city: BasicWeatherModel) async -> WeatherCityInfo? {
-        try? await useCase.cityWeather(for: city)
+    func getWeatherForCity(_ city: BasicWeatherModel) async throws -> WeatherCityInfo {
+        try await useCase.cityWeather(for: city)
     }
 
     func getCurrentLocationWeather(_ location: CLLocation) {
