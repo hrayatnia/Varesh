@@ -14,8 +14,8 @@ struct HomeUseCase {
         locationManager.requestAuthorisation()
     }
 
-    func cityWeather(for location: BasicWeatherModel) async throws -> WeatherCityInfo? {
-        try? await weather.weatherForCity(name: location.name,
+    func cityWeather(for location: BasicWeatherModel) async throws -> WeatherCityInfo {
+        try await weather.weatherForCity(name: location.name,
                                           for: location.location)
     }
 }
