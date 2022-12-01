@@ -1,6 +1,7 @@
 import Combine
 import SwiftUI
 import KWeatherService
+
 final class AppSettings: ObservableObject {
 
     static let shared = AppSettings()

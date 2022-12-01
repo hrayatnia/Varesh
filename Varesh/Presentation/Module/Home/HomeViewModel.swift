@@ -20,6 +20,10 @@ final class HomeViewModel: ViewModel {
     }
 
     init() {
+       load()
+    }
+
+    func load() {
         Task {
             await useCase.cities().asyncMap { data in
                 guard let data = await getWeatherForCity(data) else { return }
@@ -32,7 +36,7 @@ final class HomeViewModel: ViewModel {
     }
 
     func showSetting() {
-        router?.route(to: \.setting)
+        router.route(to: \.setting)
     }
 
 //    func editView() {
@@ -49,7 +53,9 @@ final class HomeViewModel: ViewModel {
 
     func getLocation() {
         cancellable = useCase.locationManager.locationUpdate.sink(receiveValue: { [unowned self] location in
-            self.getCurrentLocationWeather(location)
+            DispatchQueue.main.async {
+                self.getCurrentLocationWeather(location)
+            }
         })
     }
 
