@@ -4,16 +4,8 @@ import Combine
 import NetShears
 
 final class SettingViewModel: ViewModel {
-    var theme: Bool = false {
-        didSet {
-            updateTheme(!oldValue)
-        }
-    }
-    var unit: Bool = false {
-        didSet {
-            updateUnit(!oldValue)
-        }
-    }
+    @Published var theme: Bool = false
+    @Published var unit: Bool = false
 
     private var useCase: SettingsUseCase = .init()
     var appInfo: [(key: String, value: String)] {

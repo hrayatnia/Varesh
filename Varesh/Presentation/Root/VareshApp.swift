@@ -12,6 +12,8 @@ struct VareshApp: App {
 
     @ObservedObject var appSettings = AppSettings.shared
 
+    @State var coordinator: AppCoordinator = .init()
+
     init() {
         #if DEBUG
         NetShears.shared.startListener()
@@ -20,7 +22,7 @@ struct VareshApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AppCoordinator().view()
+            coordinator.view()
                 .preferredColorScheme(appSettings.currentTheme.colorScheme)
         }
     }

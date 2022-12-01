@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hrayatnia/KWeatherService",
       "state" : {
-        "revision" : "2ae551a036b67279425462d5f19815525e970b95",
-        "version" : "1.0.4"
+        "revision" : "c76d733fa095a8ffa833033551f2a1223f67bba4",
+        "version" : "1.0.5"
       }
     },
     {

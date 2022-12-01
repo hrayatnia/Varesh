@@ -19,27 +19,21 @@ final class HomeViewModel: ViewModel {
         self.cities = cities
     }
 
-    init() {
+    func load() {
         Task {
-            await useCase.cities().asyncMap { data in
+            await useCase.cities().asyncMap { [unowned self] data in
                 guard let data = await getWeatherForCity(data) else { return }
                 DispatchQueue.main.async {
+                    self.cities.removeAll(where: { data.city.name == $0.city.name })
                     self.cities.append(data)
                 }
             }
         }
+        getLocation()
     }
 
     func showSetting() {
-        router?.route(to: \.setting)
-    }
-
-//    func editView() {
-//
-//    }
-
-    func showDetail(_ city: BasicWeatherModel) {
-        router.route(to: \.weatherDetail, city)
+        router.route(to: \.setting)
     }
 
     func requestForLocation() {
@@ -59,7 +53,9 @@ final class HomeViewModel: ViewModel {
     func getCurrentLocationWeather(_ location: CLLocation) {
         Task {
             guard let data = try? await self.useCase.cityWeather(for: .init(name: "Current Location", location: location.coordinate)) else { return }
-            self.cities.append(data)
+            DispatchQueue.main.async {
+                self.cities.append(data)
+            }
         }
     }
 }

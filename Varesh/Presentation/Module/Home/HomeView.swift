@@ -21,6 +21,7 @@ struct HomeView: ViewProtocol {
                               placeholder: Constants.searchPlaceholder.rawValue)
         .onAppear {
             viewModel.requestForLocation()
+            viewModel.load()
         }
 
     }
@@ -28,11 +29,8 @@ struct HomeView: ViewProtocol {
     private var cityList: some View {
         VStack {
             LazyListView {
-                ForEach(viewModel.cities) { data in
+                ForEach(viewModel.cities, id: \.city) { data in
                     CityWeatherRow(viewModel: .init(city: data))
-                        .onTapGesture {
-                            viewModel.showDetail(data.city)
-                        }
                 }
             }
             Spacer()

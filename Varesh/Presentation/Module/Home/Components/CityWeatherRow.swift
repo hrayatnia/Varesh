@@ -15,9 +15,6 @@ struct CityWeatherRow: ViewProtocol {
                             .font(.title)
                             .foregroundColor(.white)
                             .bold()
-//                        Text(viewModel.city.weather.current()?.hour ?? "--:--")
-//                            .font(.subheadline)
-//                            .foregroundColor(.white)
                     }
                     Spacer()
                     Text("\(Int(viewModel.city.weather.current()?.current ?? 0))°" )
@@ -35,8 +32,15 @@ struct CityWeatherRow: ViewProtocol {
                         .foregroundColor(.white)
                 }.padding()
             }
-            .background(( viewModel.city.weather.current()?.image() ?? Image("clear-night")).blur(radius: 24))
+            .background(( viewModel.city.weather.current()?.image() ?? Image("clear-night"))
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .clipped()
+                .blur(radius: 24))
             .modifier(CardModifier(radius: 24.0, shadow: .clear))
+            .onTapGesture {
+                viewModel.showDetail(viewModel.city.city)
+            }
         }
 }
 
