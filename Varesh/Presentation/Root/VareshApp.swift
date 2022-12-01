@@ -7,6 +7,7 @@
 
 import SwiftUI
 import NetShears
+import KWeatherService
 @main
 struct VareshApp: App {
 
@@ -15,6 +16,7 @@ struct VareshApp: App {
     @State var coordinator: AppCoordinator = .init()
 
     init() {
+        APISetting.set(secretKey: AppSettings.shared.secretKey)
         #if DEBUG
         NetShears.shared.startListener()
         #endif
