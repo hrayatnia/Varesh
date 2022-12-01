@@ -53,9 +53,7 @@ final class HomeViewModel: ViewModel {
 
     func getLocation() {
         cancellable = useCase.locationManager.locationUpdate.sink(receiveValue: { [unowned self] location in
-            DispatchQueue.main.async {
-                self.getCurrentLocationWeather(location)
-            }
+            self.getCurrentLocationWeather(location)
         })
     }
 
@@ -66,7 +64,9 @@ final class HomeViewModel: ViewModel {
     func getCurrentLocationWeather(_ location: CLLocation) {
         Task {
             guard let data = try? await self.useCase.cityWeather(for: .init(name: "Current Location", location: location.coordinate)) else { return }
-            self.cities.append(data)
+            DispatchQueue.main.async {
+                self.cities.append(data)
+            }
         }
     }
 }
