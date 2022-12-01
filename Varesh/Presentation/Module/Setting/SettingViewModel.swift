@@ -1,7 +1,9 @@
 import Foundation
 import SwiftUI
 import Combine
+#if DEBUG && os(iOS)
 import NetShears
+#endif
 
 final class SettingViewModel: ViewModel {
     @Published var theme: Bool = false
@@ -25,7 +27,7 @@ final class SettingViewModel: ViewModel {
         AppSettings.shared.unit = state ? .imperial : .metric
     }
 
-    #if DEBUG
+    #if DEBUG && os(iOS)
     func showNetworkLog() {
         NetShears.shared.startLogger()
         NetShears.shared.presentNetworkMonitor()

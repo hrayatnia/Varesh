@@ -33,7 +33,7 @@ extension SettingView {
                 .onChange(of: viewModel.unit, perform: {
                     viewModel.updateUnit($0)
                 })
-            #if DEBUG
+            #if DEBUG && os(iOS)
             Button("Network Logs", action: viewModel.showNetworkLog)
             #endif
         } header: {
@@ -65,13 +65,3 @@ extension SettingView {
         }
     }
 }
-
-#if DEBUG
-struct SettingView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            SettingView(viewModel: .init())
-        }
-    }
-}
-#endif

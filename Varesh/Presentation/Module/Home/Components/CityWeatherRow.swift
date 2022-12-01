@@ -36,6 +36,7 @@ struct CityWeatherRow: ViewProtocol {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipped()
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .blur(radius: 24))
             .modifier(CardModifier(radius: 24.0, shadow: .clear))
             .onTapGesture {
@@ -43,19 +44,3 @@ struct CityWeatherRow: ViewProtocol {
             }
         }
 }
-
-#if DEBUG
-struct CityWeatherRow_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            LazyListView {
-                ForEach(0..<10) { _ in
-                    CityWeatherRow(viewModel: .init(city: .mock()))
-                }
-            }.padding()
-                .navigationTitle("Weather".capitalized)
-        }
-    }
-
-}
-#endif
