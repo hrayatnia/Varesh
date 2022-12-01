@@ -35,7 +35,7 @@ struct WeatherServices {
         case .failure(let error):
             throw error
         case .none:
-            throw NSError()
+            throw WeatherNetworkError.unkown
         }
     }
 
@@ -45,6 +45,7 @@ struct WeatherServices {
     }
 }
 
-enum WeatherNetworkError: Error {
+enum WeatherNetworkError: LocalizedError {
     case notFound
+    case unkown
 }
